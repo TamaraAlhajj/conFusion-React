@@ -14,6 +14,7 @@ Some of the general topics covered in this course project include,
 
 ## Authors
 Tamara Alhajj - [Github](https://github.com/TamaraAlhajj)
+
 Professor Jogesh Muppala
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
