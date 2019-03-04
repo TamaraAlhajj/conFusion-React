@@ -20,8 +20,8 @@ function About(props) {
           </Media>
           <Media body className="ml-5">
             <Media heading>{leader.name}</Media>
-            <p>{leader.designation}</p>
-            {leader.description}
+            <p><em>{leader.designation}</em></p>
+            <p>{leader.description}</p>
           </Media>
         </Media>
       </div>
