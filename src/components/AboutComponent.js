@@ -28,7 +28,7 @@ function About(props) {
     );
   }
 
-  // Render all leaders by pass each leader (from leaders.js) to RenderLeader()
+  // Render list of leaders then pass each leader to RenderLeader component
   const leaders = props.leaders.map(leader => {
     return <RenderLeader leader={leader} />;
   });
