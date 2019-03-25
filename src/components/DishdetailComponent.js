@@ -101,8 +101,8 @@ class CommentFormModal extends Component {
                               
                           </Row>
                           <Row className="form-group">
-                              <Label htmlFor="name" className="col-12" >Your Name</Label>
-                              <Control.text model=".name" id="name" name="name"
+                              <Label htmlFor="author" className="col-12" >Your Name</Label>
+                              <Control.text model=".author" id="author" name="author"
                                   placeholder="Your Name"
                                   className="form-control col-12"
                                   validators={{
@@ -129,14 +129,10 @@ class CommentFormModal extends Component {
                               
                           </Row>
                           <Row className="form-group">
-                              
-                                  <Button type="submit" color="primary" >
-                                      Submit
-                                  </Button>
-                              
+                                  <Button type="submit" color="primary" onClick={this.toggleModal}>Submit</Button>
                           </Row>
                       </LocalForm>
-                    </div>
+                      </div>
                   </ModalBody>
               </Modal>
             </React.Fragment>
