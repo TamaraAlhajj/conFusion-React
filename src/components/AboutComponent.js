@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 function About(props) {
-
   function RenderLeader({ leader }) {
     return (
       <div className="mt-5">
@@ -20,7 +19,9 @@ function About(props) {
           </Media>
           <Media body className="ml-5">
             <Media heading>{leader.name}</Media>
-            <p><em>{leader.designation}</em></p>
+            <p>
+              <em>{leader.designation}</em>
+            </p>
             <p>{leader.description}</p>
           </Media>
         </Media>
