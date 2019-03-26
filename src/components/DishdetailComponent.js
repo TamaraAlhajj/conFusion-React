@@ -77,7 +77,6 @@ class CommentFormModal extends Component {
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
-        // event.preventDefault();
     }
     render(){
         return(
@@ -112,7 +111,7 @@ class CommentFormModal extends Component {
                                   
                               <Errors
                                   className="text-danger"
-                                  model=".name"
+                                  model=".author"
                                   show="touched"
                                   messages={{
                                       minLength: 'Must be greater than 2 characters',
