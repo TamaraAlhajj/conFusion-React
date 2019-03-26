@@ -8,7 +8,7 @@ import {
   Label
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import { Control, Form, Errors, actions } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || val.length <= len;
@@ -19,13 +19,21 @@ const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 class Contact extends Component {
   constructor(props) {
     super(props);
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(values) {
     console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    alert("Thank you for your feedback!\n" + JSON.stringify(values));
+    this.props.postFeedback(
+      values.firstname,
+      values.lastname,
+      values.telnum,
+      values.email,
+      values.agree,
+      values.contactType,
+      values.message
+    );
     this.props.resetFeedbackForm();
     // event.preventDefault();
   }
@@ -214,6 +222,30 @@ class Contact extends Component {
                       validEmail: " Invalid Email Address."
                     }}
                   />
+                </Col>
+              </Row>
+              <Row className="form-group">
+                <Col md={{ size: 6, offset: 2 }}>
+                  <div className="form-check">
+                    <Label check>
+                      <Control.checkbox
+                        model=".agree"
+                        className="form-check-input"
+                        name="agree"
+                      />{" "}
+                      <strong>May we contact you?</strong>
+                    </Label>
+                  </div>
+                </Col>
+                <Col md={{ size: 3, offset: 1 }}>
+                  <Control.select
+                    model=".contactType"
+                    className="form-control"
+                    name="contactType"
+                  >
+                    <option>Tel.</option>
+                    <option>Email</option>
+                  </Control.select>
                 </Col>
               </Row>
               <Row className="form-group">
